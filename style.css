@@ -166,7 +166,7 @@ body {
 /* --- HERO SECTION (Targeted Blue Background) --- */
 .hero-section {
     /* CHANGE: Apply Uniform Blue ONLY here */
-    background-color: #0056b3; 
+    background-color: #024c95; 
     min-height: 90vh; 
     display: flex;
     align-items: center; 
