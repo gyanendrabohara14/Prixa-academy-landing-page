@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // WhatsApp Logic (Free Consultation)
     // -----------------------------------------------------
     const whatsappNumber = '9779704598963'; 
-    const defaultMessage = 'Hello, I would like a free consultation about the Digtal Marketing program.';
+    const defaultMessage = 'Hello, I would like a free consultation about the Digital Marketing program.';
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
     const consultButtons = document.querySelectorAll('.btn-consult');
