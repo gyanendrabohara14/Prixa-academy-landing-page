@@ -619,3 +619,169 @@ body {
     font-weight: 600;
     color: #374151;
 }
+
+
+
+#student-life {
+    padding: 80px 0;
+    overflow: hidden; 
+}
+
+.sub-section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+
+.photo-label {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 0.3px;
+}
+
+
+.video-grid-vertical {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+}
+
+.v-video-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.v-video-card {
+    width: 100%;
+    aspect-ratio: 4 / 5; 
+    background: #000;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.v-video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.student-slider {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+ 
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.slider-track {
+    display: flex;
+    width: calc(220px * 12); 
+    animation: scrollInfinite 30s linear infinite;
+}
+
+.slide {
+    width: 200px;
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+@keyframes scrollInfinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-220px * 6)); } 
+}
+
+.student-slider:hover .slider-track {
+    animation-play-state: paused;
+}
+
+
+.classroom-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.class-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 18px;
+    transition: transform 0.3s ease;
+}
+
+.class-box:hover img {
+    transform: translateY(-5px);
+}
+
+
+.workshop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.workshop-box img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+}
+
+
+@media (max-width: 992px) {
+    .classroom-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .video-grid-vertical,
+    .classroom-row,
+    .workshop-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .v-video-card {
+        max-width: 400px; 
+        margin: 0 auto;
+    }
+
+    .sub-section-title {
+        font-size: 1.5rem;
+    }
+    
+    .slide {
+        width: 160px; 
+    }
+    
+    .slider-track {
+        width: calc(180px * 12);
+    }
+    
+    @keyframes scrollInfinite {
+        100% { transform: translateX(calc(-180px * 6)); }
+    }
+}
+
+

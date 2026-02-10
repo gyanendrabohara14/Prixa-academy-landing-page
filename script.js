@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // -----------------------------------------------------
-    // Mobile Menu Logic
-    // -----------------------------------------------------
+    
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -11,9 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // -----------------------------------------------------
-    // FAQ Accordion Logic
-    // -----------------------------------------------------
+ 
     const accordionItems = document.querySelectorAll('.accordion-item');
 
     accordionItems.forEach(item => {
@@ -66,9 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // -----------------------------------------------------
-    // Enrollment Logic (Google Form)
-    // -----------------------------------------------------
+   
     const enrollFormUrl = 'https://forms.gle/mghH7wD19GL1CfTs5';
 
     const enrollButtons = document.querySelectorAll(
@@ -82,9 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // -----------------------------------------------------
-    // WhatsApp Logic (Free Consultation)
-    // -----------------------------------------------------
+   
     const whatsappNumber = '9779704598963'; 
     const defaultMessage = 'Hello, I would like a free consultation about the Digital Marketing program.';
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
@@ -96,5 +88,34 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             window.open(whatsappLink, '_blank');
         });
+    });
+});
+
+
+const videos = document.querySelectorAll('.hover-play');
+
+videos.forEach(video => {
+    let playTimer;
+
+    video.addEventListener('mouseenter', () => {
+        // Start the 3-second countdown
+        playTimer = setTimeout(() => {
+            
+            // NEW: Pause all other videos before playing this one
+            videos.forEach(v => {
+                if (v !== video) {
+                    v.pause();
+                }
+            });
+
+            video.play();
+        }, 3000); 
+    });
+
+    video.addEventListener('mouseleave', () => {
+        clearTimeout(playTimer);
+        video.pause();
+        // Optional: Reset to start so the poster image shows again
+        video.currentTime = 0; 
     });
 });
